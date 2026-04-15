@@ -1,36 +1,46 @@
-
-// ELEMENTOS
 object castillo {
-    var     defensa = 150
-    method  altura() = 20
+    var nivelDeDefensa = 150
 
-    method  recibirAtaque(_potenciaAtaque) {
-        defensa = (defensa - _potenciaAtaque).max(0)
-        }
-    method  valorOtorgado() = defensa / 5
-    method  recibirTrabajo() {defensa = (defensa + 20).min(200)}
-}
-object aurora {
-    var     estaViva = true
-    method  altura() = 1
-    method  recibirAtaque(_potenciaAtaque) {
-        if (_potenciaAtaque > 10) {estaViva = false}
+    method altura() {
+        return 20
     }
-    method estaViva() = estaViva
-    method valorOtorgado() = 15
-    method recibirTrabajo() { /* nada */ }
+
+    method nivelDeDefensa() {
+        return nivelDeDefensa
+    }
+
+    method cambiarNivelDeDefensa(unNivel) {
+        nivelDeDefensa = unNivel
+    }
+
 }
+
+object aurora {
+// Es una vaca
+    var estadoDeVida = true
+    method altura() {
+        return 1
+    }
+
+    method estaViva() {
+        return estadoDeVida
+    }
+
+    method cambiarEstadoDeVida(unEstado) {
+        estadoDeVida = unEstado
+    }
+}
+
 object tipa {
+// Es un árbol
     var altura = 8
-    method  altura() = altura
-    method crecer() {altura += 1}
-    method recibirAtaque(_potenciaAtaque) {/* nada */ }
-    method valorOtorgado() = 2 * altura
-    method recibirTrabajo() {self.crecer()}
+    method altura() {
+        return altura
+    }
+
+    method cambiarAltura(unaAltura) {
+        altura = unaAltura
+    }
 }
-object ningunElemento {
-    method altura() =  0
-    method recibirAtaque(_potenciaAtaque) { /* nada */ }
-    method recibirTrabajo() { /* nada */ }
-    method valorOtorgado() { /* nada */ }
-}
+
+
