@@ -1,6 +1,17 @@
 import armas.*
+import elementos.*
+
 object luisa {
 // Es una jugadora
+  var personajeActivo = floki
+
+  method cambiarPersonaje(unPersonaje) {
+    personajeActivo = unPersonaje
+  }
+
+  method aparece(elemento) {
+    personajeActivo.encontrar(elemento)
+  }
 
 }
 
@@ -37,13 +48,17 @@ object floki {
 
 object mario {
 // Es un personaje trabajador
+    var valorRecolectado = 0
+    var ultimaAltura = 0
 
     method encontrar(elemento) {
-        // No ocurre nada
-        var valorRecolectado = 0
-
+        ultimaAltura = elemento.altura()
         valorRecolectado = valorRecolectado + elemento.valorQueOtorga()
         elemento.recibirTrabajo()
+    }
+
+    method esFeliz() {
+      return valorRecolectado >= 50 or ultimaAltura >= 10
     }
 
 }

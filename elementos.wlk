@@ -49,11 +49,20 @@ object aurora {
             estadoDeVida = true
         }
     }
+
+    method valorQueOtorga() {
+        return 15
+    }
+
+    method recibirTrabajo() {
+        // No ocurre nada
+    }
 }
 
 object tipa {
 // Es un árbol
     var altura = 8
+
     method altura() {
         return altura
     }
@@ -64,6 +73,14 @@ object tipa {
 
     method recibirAtaque(potencia) {
         // No ocurre nada   
+    }
+
+    method valorQueOtorga() {
+        return altura * 2
+    }
+
+    method recibirTrabajo() {
+        altura = altura + 1
     }
 }
 
